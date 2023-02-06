@@ -52,3 +52,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: ./tools/custom-actions/e2e/
+        id: hello
+        with:
+          who-to-greet: 'Mona the Octocat'
