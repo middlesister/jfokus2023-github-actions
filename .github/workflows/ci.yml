@@ -43,3 +43,7 @@ jobs:
 
       - name: ${{ matrix.command }}
         run: yarn ${{ matrix.command }}
+  echo:
+    uses: middlesister/jfokus2023-github-actions/.github/_echo.yml@reusable
+    with:
+      message: "another message"
