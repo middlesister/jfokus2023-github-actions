@@ -47,3 +47,8 @@ jobs:
     uses: middlesister/jfokus2023-github-actions/.github/workflows/_echo.yml@reusable
     with:
       message: "another message"
+  
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./tools/custom-actions/e2e/
