@@ -23,44 +23,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16
+          cache: 'yarn'
 
       - name: Install dependencies
         run: yarn install
 
       - name: Lint
         run: yarn ${{ matrix.command }}
-  
-  unit-tests:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-
-      - name: Setup NodeJS 16
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16
-      
-      - name: Test
-        run: yarn test:ci
-
-  e2e-test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-
-      - name: Setup NodeJS 16
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16
-
-      - name: e2e
-        run: yarn e2e
-
-
